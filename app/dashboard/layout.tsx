@@ -14,7 +14,7 @@ export default function DashboardLayout({
   const { data: session, status } = useSession();
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return <div>Carregando...</div>;
   }
 
   if (!session) {
@@ -29,7 +29,7 @@ export default function DashboardLayout({
             <div className="flex">
               <div className="flex-shrink-0 flex items-center">
                 <Users className="h-8 w-8" />
-                <span className="ml-2 text-xl font-bold">Access Control</span>
+                <span className="ml-2 text-xl font-bold">Controle de Acesso</span>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                 <a
@@ -37,21 +37,21 @@ export default function DashboardLayout({
                   className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                 >
                   <Users className="h-4 w-4 mr-2" />
-                  Employees
+                  Funcionários
                 </a>
                 <a
                   href="/dashboard/visitors"
                   className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                 >
                   <UserPlus className="h-4 w-4 mr-2" />
-                  Visitors
+                  Visitantes
                 </a>
                 <a
                   href="/dashboard/service-providers"
                   className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                 >
                   <Building2 className="h-4 w-4 mr-2" />
-                  Service Providers
+                  Prestadores de Serviço
                 </a>
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function DashboardLayout({
                 onClick={() => signOut({ callbackUrl: '/login' })}
                 variant="outline"
               >
-                Sign Out
+                Sair
               </Button>
             </div>
           </div>

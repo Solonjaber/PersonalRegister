@@ -8,13 +8,13 @@ export default function DashboardPage() {
       <Link href="/dashboard/employees">
         <Card className="hover:bg-gray-50 transition-colors cursor-pointer">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Employees</CardTitle>
+            <CardTitle className="text-sm font-medium">Funcionários</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">Control</div>
+            <div className="text-2xl font-bold">Controle</div>
             <p className="text-xs text-muted-foreground">
-              Manage employee access and information
+              Gerencie o acesso e informações dos funcionários
             </p>
           </CardContent>
         </Card>
@@ -23,13 +23,13 @@ export default function DashboardPage() {
       <Link href="/dashboard/visitors">
         <Card className="hover:bg-gray-50 transition-colors cursor-pointer">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Visitors</CardTitle>
+            <CardTitle className="text-sm font-medium">Visitantes</CardTitle>
             <UserPlus className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">Register</div>
+            <div className="text-2xl font-bold">Registrar</div>
             <p className="text-xs text-muted-foreground">
-              Track and manage visitor access
+              Acompanhe e gerencie o acesso de visitantes
             </p>
           </CardContent>
         </Card>
@@ -38,13 +38,13 @@ export default function DashboardPage() {
       <Link href="/dashboard/service-providers">
         <Card className="hover:bg-gray-50 transition-colors cursor-pointer">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Service Providers</CardTitle>
+            <CardTitle className="text-sm font-medium">Prestadores de Serviço</CardTitle>
             <Building2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">Manage</div>
+            <div className="text-2xl font-bold">Gerenciar</div>
             <p className="text-xs text-muted-foreground">
-              Control service provider access
+              Controle o acesso dos prestadores de serviço
             </p>
           </CardContent>
         </Card>
