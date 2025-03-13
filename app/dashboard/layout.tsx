@@ -1,9 +1,5 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
-import { redirect } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { signOut } from 'next-auth/react';
 import { Users, UserPlus, Building2 } from 'lucide-react';
 
 export default function DashboardLayout({
@@ -11,16 +7,6 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { data: session, status } = useSession();
-
-  if (status === 'loading') {
-    return <div>Carregando...</div>;
-  }
-
-  if (!session) {
-    redirect('/login');
-  }
-
   return (
     <div className="min-h-screen bg-gray-100">
       <nav className="bg-white shadow-sm">
@@ -54,14 +40,6 @@ export default function DashboardLayout({
                   Prestadores de Serviço
                 </a>
               </div>
-            </div>
-            <div className="flex items-center">
-              <Button
-                onClick={() => signOut({ callbackUrl: '/login' })}
-                variant="outline"
-              >
-                Sair
-              </Button>
             </div>
           </div>
         </div>

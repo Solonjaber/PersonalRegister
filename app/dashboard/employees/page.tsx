@@ -15,12 +15,10 @@ import {
 
 export default function EmployeesPage() {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setError(null);
 
     const formData = new FormData(e.currentTarget);
     const employeeData = {
@@ -37,25 +35,9 @@ export default function EmployeesPage() {
       rg: formData.get('rg'),
     };
 
-    try {
-      const response = await fetch('/api/employees', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(employeeData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Falha ao registrar funcionário');
-      }
-
-      e.currentTarget.reset();
-    } catch (err) {
-      setError('Falha ao registrar funcionário. Tente novamente.');
-    } finally {
-      setIsLoading(false);
-    }
+    console.log('Employee Data:', employeeData);
+    e.currentTarget.reset();
+    setIsLoading(false);
   };
 
   return (
@@ -130,10 +112,10 @@ export default function EmployeesPage() {
                   <SelectValue placeholder="Selecione o estado civil" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="single">Solteira</SelectItem>
-                  <SelectItem value="married">Casada</SelectItem>
-                  <SelectItem value="divorced">Divorciada</SelectItem>
-                  <SelectItem value="widowed">Viúva</SelectItem>
+                  <SelectItem value="single">Solteiro(a)</SelectItem>
+                  <SelectItem value="married">Casado(a)</SelectItem>
+                  <SelectItem value="divorced">Divorciado(a)</SelectItem>
+                  <SelectItem value="widowed">Viúvo(a)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -194,12 +176,8 @@ export default function EmployeesPage() {
             </div>
           </div>
 
-          {error && (
-            <div className="text-sm text-red-500 text-center">{error}</div>
-          )}
-
           <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? 'Registering...' : 'Registrar Funcionário'}
+            {isLoading ? 'Registrando...' : 'Registrar Funcionário'}
           </Button>
         </form>
       </CardContent>
